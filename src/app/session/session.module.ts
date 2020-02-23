@@ -1,17 +1,24 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { SessionRoutingModule } from './session-routing.module';
-import { SessionComponent } from './components/session.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SessionComponent } from './session.component';
+import { SessionService } from './session.service';
 
 @NgModule({
     declarations: [
         SessionComponent,
     ],
     imports: [
+        BrowserModule,
         SessionRoutingModule,
+        HttpClientModule,
     ],
     exports: [],
-    providers: [],
+    providers: [
+        SessionService,
+    ],
 })
 
 export class SessionModule {}

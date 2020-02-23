@@ -1,0 +1,26 @@
+<div class="table">
+    <div class="header">
+        <div class="row">
+            <div class="cell">ID</div>
+            <div class="cell">Name</div>
+            <div class="cell">Time zone</div>
+            <div class="cell">Hobbies</div>
+            <div class="cell">Created At</div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="row" *ngFor="let session of sessions">
+            <div class="cell">{{ session._id }}</div>
+            <div class="cell">{{ session.person.name }}</div>
+            <div class="cell">{{ session.person.timeZone }}</div>
+            <div class="cell">
+                <ul>
+                    <li *ngFor="let hobby of session.person.hobbies">
+                        {{ hobby }}
+                    </li>
+                </ul>
+            </div>
+            <div class="cell">{{ session.createAt }}</div>
+        </div>
+    </div>
+</div>
