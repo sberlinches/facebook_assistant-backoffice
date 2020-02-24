@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { SessionRoutingModule } from './session-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { SessionComponent } from './session.component';
+import { SessionComponent } from './components/session.component';
 import { SessionService } from './session.service';
 
 @NgModule({

@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { SessionService } from './session.service';
-import { Session } from './session';
+import { SessionService } from '../session.service';
+import { Session } from '../session';
 
 @Component({
     selector: 'app-session',
-    templateUrl: './session.component.html',
-    styleUrls: ['./session.component.scss'],
+    templateUrl: '../views/session.component.html',
     providers: [
         SessionService,
     ],
@@ -13,12 +12,14 @@ import { Session } from './session';
 
 export class SessionComponent implements OnInit {
 
-    // TODO private?
     public sessions: Array<Session>;
+    public title: string;
 
     constructor(
         private sessionService: SessionService,
-    ) {}
+    ) {
+        this.title = 'Records';
+    }
 
     ngOnInit(): void {
         this.getSessions();
