@@ -7,5 +7,5 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'facebook_assistant-backoffice';
+  title = 'Facebook Assistant Back-office';
 }
