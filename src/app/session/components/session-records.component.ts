@@ -30,7 +30,6 @@ export class SessionRecordsComponent implements OnInit {
             .getAll()
             .subscribe((sessions) => {
                 this.sessions = sessions as Session[];
-                console.log(this.sessions);
             }, (error) => {
                 console.error(error);
             });
