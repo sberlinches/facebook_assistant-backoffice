@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SessionComponent } from './components/session.component';
+import { SessionRecordsComponent } from './components/session-records.component';
 import { SessionChartsComponent } from './components/session-charts.component';
 
 const routes: Routes = [
     {
-        path: 'sessions',
-        component: SessionComponent,
+        path: 'sessions/records',
+        component: SessionRecordsComponent,
     },
     {
         path: 'sessions/charts',

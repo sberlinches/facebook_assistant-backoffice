@@ -4,13 +4,13 @@ import { Session } from '../session';
 
 @Component({
     selector: 'app-session',
-    templateUrl: '../views/session.component.html',
+    templateUrl: '../views/session-records.component.html',
     providers: [
         SessionService,
     ],
 })
 
-export class SessionComponent implements OnInit {
+export class SessionRecordsComponent implements OnInit {
 
     public sessions: Array<Session>;
     public title: string;
