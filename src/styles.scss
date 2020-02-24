@@ -1,80 +1,155 @@
-/* You can add global styles to this file, and also import other style files */
-$primary: rgb(111, 0, 255);
+$background: #374f6c;
+$background-dark: #304863;
+$highlight-cyan: #56d9e3;
+$highlight-pink: #ed558d;
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Rubik:400&display=swap');
 
 body {
+  background-color: $background;
   margin: 0;
-  font-family: sans-serif;
-  font-size: 12px;
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
+app-root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
 }
 
-header {
-  background-color: $primary;
-  padding: 1em 0;
+body, input, select, option, button, textarea {
+  color: white;
+  font-family: Lato, sans-serif;
+  font-size: 100%;
+}
 
-  a {
-    color: white;
-    text-decoration: none;
-  }
+h1, h2, h3, h4, h5, h6 {
+  display: inline-block;
+  font-family: Rubik;
+  margin: 0;
+}
 
-  a.logo {
+h1 {
+  font-size: 160%;
+}
+
+h2 {
+  font-size: 120%;
+}
+
+a {
+  color: $highlight-cyan;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+}
+
+article {
+  background-color: $background-dark;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+table{
+  width: 100%;
+  border-spacing: 0 2px;
+
+  thead {
     font-weight: bold;
+    text-align: left;
   }
 
-  nav {
-    float: right;
+  tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
 
-    ul {
-      list-style-type: none;
-      margin: 0;
-      display: flex;
+  td, th {
+    padding: 10px;
+  }
 
-      li a {
-        padding: 1em;
-        &:hover {
-          background: darken($primary, 10%);
-        }
+  th {
+    color: $highlight-pink;
+    border-bottom: 2px solid $highlight-pink;
+  }
+}
+
+#body-sidebar {
+  background-color: rgba(255, 255, 255, 0.1);
+  flex: 0 0 auto;
+  order: 1;
+  padding: 20px 10px;
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+
+    li {
+      list-style: none;
+      margin-bottom: 10px;
+
+      a {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 100%;
+        display: inline-block;
+        padding: 10px;
+      }
+
+      a:hover {
+        background-color: rgba(255, 255, 255, 0.08);
       }
     }
   }
 }
 
-h1 {
-  margin-top: 2em;
+#body-main {
+  order: 2;
+  padding: 20px;
+  width: 100%;
 }
 
+.icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  height: 40px;
+  width: 40px;
 
-.table{
-  display: table;
-  width: 100%;
-
-  .header {
-    background-color: #EEE;
-    display: table-header-group;
-    font-weight: bold;
+  &.home {
+    background-image: url("./assets/home.png");
   }
 
-  .footer {
-    background-color: #EEE;
-    display: table-footer-group;
-    font-weight: bold;
+  &.records {
+    background-image: url("assets/records.png");
   }
 
-  .body {
-    display: table-row-group;
+  &.charts {
+    background-image: url("assets/charts.png");
   }
 
-  .row {
-    display: table-row;
+  &.settings {
+    background-image: url("./assets/settings.png");
+  }
+}
+
+@media all and (max-width: 768px) {
+
+  body {
+    flex-direction: column;
   }
 
-  .cell {
-    border: 1px solid #999999;
-    display: table-cell;
-    padding: 3px 10px;
+  #body-sidebar {
+    padding: 10px 20px;
+
+    nav ul {
+      flex-direction: row;
+
+      li {
+        margin: 0 10px 0 0;
+      }
+    }
   }
 }
