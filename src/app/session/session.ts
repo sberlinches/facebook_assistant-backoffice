@@ -8,5 +8,5 @@ export interface Person {
 export interface Session {
     _id: string;
     person: Person;
-    createAt: Date;
+    createdAt: Date;
 }

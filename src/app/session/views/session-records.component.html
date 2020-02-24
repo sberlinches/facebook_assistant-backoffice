@@ -19,7 +19,7 @@
                     <td>{{ i }}</td>
                     <td>{{ session._id }}</td>
                     <td>{{ session.person.name }}</td>
-                    <td>{{ session.createAt }}</td>
+                    <td>{{ session.createdAt | date:'medium' }}</td>
                 </tr>
             </tbody>
         </table>
